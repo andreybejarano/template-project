@@ -1,5 +1,29 @@
 const AssetsInjectPlugin = require('assets-inject-webpack-plugin');
+const NodemonPlugin = require('nodemon-webpack-plugin');
+const path = require('path');
 const injectOpt = { addPrefix: '/' };
+let plugins = [
+	new AssetsInjectPlugin('./server/app/views/layout.pug', injectOpt)
+];
+if (process.env.MODE === 'develop') {
+	plugins.push(
+		new NodemonPlugin({
+
+			// What to watch.
+			watch: path.resolve('./server'),
+
+			// Detailed log.
+			verbose: true,
+
+			// Node arguments.
+			nodeArgs: ['--inspect=9222'],
+
+			// If using more than one entry, you can specify
+			// which output file will be restarted.
+			script: './server/index.js'
+		})
+	);
+}
 const config = {
 	entry: {
 		client: ['./client/app.jsx']
@@ -26,9 +50,7 @@ const config = {
 	resolve: {
 		extensions: ['.js', '.jsx', '.css', '.json', '.pug']
 	},
-	plugins: [
-		new AssetsInjectPlugin('./server/app/views/layout.pug', injectOpt)
-	]
+	plugins: plugins
 };
 
 module.exports = config;
