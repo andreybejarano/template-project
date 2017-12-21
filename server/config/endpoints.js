@@ -2,7 +2,7 @@
 const config = require('./env');
 
 const endpoints = {
-	weather: `${config.apiBasePatch}current.json?key=:key&q=:q&lang=:lang`
+	microsite: `${config.cmsBasePatch}/microsite/:siteId/affiliates/:dni`
 };
 
 module.exports = Object.assign({}, endpoints);

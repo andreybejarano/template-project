@@ -1,0 +1,17 @@
+{
+  "transform": {
+    "\\.(css|js|jsx)$": "<rootDir>/node_modules/jest-css-modules"
+  },
+  "moduleFileExtensions": [
+    "js",
+    "jsx"
+  ],
+  "moduleDirectories": [
+    "node_modules"
+  ],
+  "moduleNameMapper": {
+    "\\.(css|png|jpg|svg|)$": "<rootDir>/test/client/mocks/styleMock.js"
+  },
+  "notify": true,
+  "testResultsProcessor": "jest-junit"
+}

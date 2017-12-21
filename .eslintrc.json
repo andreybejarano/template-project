@@ -3,11 +3,16 @@
 		"browser": true,
 		"commonjs": true,
 		"es6": true,
-		"node": true
+		"node": true,
+		"jasmine": true
 	},
+	"plugins": [
+		"jasmine"
+	],
 	"extends": [
 		"standard",
-		"plugin:react/recommended"
+		"plugin:react/recommended",
+		"plugin:jasmine/recommended"
 	],
 	"parserOptions": {
 		"sourceType": "module",

@@ -5,7 +5,6 @@ const path = require('path');
 const injectOpt = { addPrefix: '/' };
 let plugins = [
 	new AssetsInjectPlugin('./server/app/views/layout.pug', injectOpt),
-	// Extract all CSS files and compile it on a single file
 	new ExtractTextPlugin({
 		filename: 'build/[name].css',
 		allChunks: true
