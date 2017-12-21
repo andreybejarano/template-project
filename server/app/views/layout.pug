@@ -1,9 +1,10 @@
 extends base
 block head
 	//- inject:css
-	//- link(rel="stylesheet", href="/build/app.css")
+	link(rel="stylesheet", href="/build/client_libs.css")
 	//- endinject
 block footer
 	//- inject:js
-	script(src="/build/app.js")
+	script(src="/build/client.js")
+	script(src="/build/client_libs.js")
 	//- endinject

@@ -4,7 +4,7 @@ import Title from '../components/Title';
 class Home extends Component {
 	render() {
 		return (
-			<section name="Home">
+			<section className="row" name="Home">
 				<Title text={'Home Titulo'} />
 			</section>
 		);
