@@ -8,7 +8,7 @@
 		"start": "node server/index.js",
 		"build": "webpack",
 		"developer": "MODE=develop npm run build -- --watch",
-		"test:server": "ava test/server/**/*.test.js"
+		"test:server": "NODE_ENV=test jasmine --config=jasmine.json"
 	},
 	"jest-junit": {
 		"output": "./logs/junit.xml"
@@ -50,6 +50,7 @@
 		"eslint-plugin-react": "^7.5.1",
 		"eslint-plugin-standard": "^3.0.1",
 		"extract-text-webpack-plugin": "^3.0.2",
+		"jasmine": "^2.8.0",
 		"jest": "^22.0.3",
 		"jest-css-modules": "^1.1.0",
 		"jest-junit": "^3.4.1",
